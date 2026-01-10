@@ -1,8 +1,11 @@
-import type { Metadata } from "next";
-import { VT323 } from "next/font/google"
+import { VT323 } from "next/font/google";
 import "./globals.css";
 
-const vt323 = VT323({ weight: '400', subsets: ['latin'], variable: '--font-vt323' })
+const vt323 = VT323({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-vt323",
+});
 
 export default function RootLayout({
   children,
@@ -11,10 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={vt323.variable}>
-      <body>
-        <p>hola</p>
-        {children}
-      </body>
+      <body className="m-5">{children}</body>
     </html>
   );
 }
