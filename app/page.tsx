@@ -1,46 +1,18 @@
-import Card from "./components/card";
-import Navbar from "./components/navbar";
+import Navbar from "../components/ui/Navbar";
+import Popular from "../components/weather/Popular";
+import Safe from "../components/weather/Safe";
+import Search from "../components/weather/Search";
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <main className="flex gap-2 w-full items">
-        <div className="flex-col items-center  w-1/3 pt-1 p-4 border border-green">
-          <svg
-            className="w-full p-1"
-            width="162"
-            height="36"
-            viewBox="0 0 170 36"
-          >
-            <use href="/sprite.svg#svg-populares"></use>
-          </svg>
-          <Card />
-        </div>
+        <Popular />
 
-        <div className="flex-col items-center  w-1/3 pt-1 p-4 border border-green">
-          <svg
-            className="w-full p-1"
-            width="162"
-            height="36"
-            viewBox="0 0 135 36"
-          >
-            <use href="/sprite.svg#svg-buscar"></use>
-          </svg>
-          <Card />
-        </div>
+        <Search />
 
-        <div className="w-1/3 pt-1 p-4 border border-green">
-          <svg
-            className="w-full p-1"
-            width="162"
-            height="36"
-            viewBox="0 0 190 36"
-          >
-            <use href="/sprite.svg#svg-guardadas"></use>
-          </svg>
-          <Card />
-        </div>
+        <Safe />
       </main>
     </>
   );
