@@ -22,10 +22,12 @@ export default async function Popular() {
         </svg>
 
         {citiesDataList.map((city) => (
+          
           <Card
             city={city.city}
             currentTemp={city.currentTemp}
             key={city.city}
+            currentIcon={city.currentIcon}
           />
         ))}
       </div>

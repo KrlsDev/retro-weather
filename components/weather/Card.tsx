@@ -1,15 +1,19 @@
+import { getSvgCodeByIconCode } from "@/lib/weather/iconMap";
 import { CardProps } from "@/types/weather";
 
 
 export default function Card( cardProps: CardProps) {
+
+  console.log(cardProps)
+
   return (
     <div className=" flex flex-row w-full border border-light-blue mb-4">
       <div className="flex flex-col items-center w-6/8">
         <p className="text-7xl">{cardProps.city}</p>
         <div className="h-35 px-3 flex flex-row justify-between items-center w-full">
           <p className="text-7xl">{Math.round(cardProps.currentTemp)}º</p>
-          <svg className="w-35 h-35 shrink-0" viewBox="0 0 242 242">
-            <use href="/sprite.svg#svg-sunny"></use>
+          <svg className="w-40 h-40 shrink-0" viewBox="0 0 242 242">
+            <use href={`/sprite.svg#${getSvgCodeByIconCode(cardProps.currentIcon)}`}></use>
           </svg>
         </div>
       </div>
