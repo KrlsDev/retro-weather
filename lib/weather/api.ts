@@ -1,3 +1,5 @@
+"use server"
+
 import { CardProps } from "@/types/weather";
 
 const API_KEY = process.env.OPENWEATHER_API_KEY;
@@ -9,7 +11,7 @@ export async function getWeatherByCities(
 
   for (const city of cities) {
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city},ES&appid=${API_KEY}&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city},&appid=${API_KEY}&units=metric`
     );
     const temperature = await response.json();
 
