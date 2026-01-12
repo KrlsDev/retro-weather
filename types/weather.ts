@@ -8,7 +8,6 @@ export type DayForecast = {
 export type CardProps = {
   city: string                
   currentTemp: number        
-  currentIcon: string 
-  //! Desactivo esto temporalmente para que sea más fácil debuggear las pruebas 
-  //forecast: DayForecast[]     
+  currentIcon: string  
+  forecast: DayForecast[]     
 }

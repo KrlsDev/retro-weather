@@ -1,10 +1,8 @@
 import { getSvgCodeByIconCode } from "@/lib/weather/iconMap";
 import { CardProps } from "@/types/weather";
 
-
-export default function Card( cardProps: CardProps) {
-
-  console.log(cardProps)
+export default function Card(cardProps: CardProps) {
+  console.log(cardProps);
 
   return (
     <div className=" flex flex-row w-full border border-light-blue mb-4">
@@ -13,21 +11,34 @@ export default function Card( cardProps: CardProps) {
         <div className="h-35 px-3 flex flex-row justify-between items-center w-full">
           <p className="text-7xl">{Math.round(cardProps.currentTemp)}º</p>
           <svg className="w-40 h-40 shrink-0" viewBox="0 0 242 242">
-            <use href={`/sprite.svg#${getSvgCodeByIconCode(cardProps.currentIcon)}`}></use>
+            <use
+              href={`/sprite.svg#${getSvgCodeByIconCode(
+                cardProps.currentIcon
+              )}`}
+            ></use>
           </svg>
         </div>
       </div>
       <div className="w-2/8 flex flex-col">
-        <div className="flex flex-col items-center border border-light-blue flex-1">
-          <p>12/2/2025</p>
-          <div className="flex flex-row justify-center-safe gap-4 items-center w-full">
-            <p className="">25,5º</p>
-            <svg className="w-5 h-5 shrink-0" viewBox="0 0 242 242">
-              <use href="/sprite.svg#svg-sunny"></use>
-            </svg>
+        {cardProps.forecast.map((day, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-center border border-light-blue flex-1"
+          >
+            <p>{day.date}</p>
+            <div className="flex flex-row justify-center-safe gap-4 items-center w-full">
+              <p className="flex">{Math.round(day.temp)}º</p>
+              <svg className="w-5 h-5 shrink-0" viewBox="0 0 242 242">
+                <use
+                  href={`/sprite.svg#${getSvgCodeByIconCode(
+                    day.icon
+                  )}`}
+                ></use>
+              </svg>
+            </div>
           </div>
-        </div>
-        <div className="flex flex-col items-center border border-light-blue flex-1">
+        ))}
+        {/* <div className="flex flex-col items-center border border-light-blue flex-1">
           <p>13/2/2025</p>
           <div className="flex flex-row justify-center-safe gap-4 items-center w-full">
             <p className="">25,5º</p>
@@ -62,7 +73,7 @@ export default function Card( cardProps: CardProps) {
               <use href="/sprite.svg#svg-sunny"></use>
             </svg>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

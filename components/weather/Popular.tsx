@@ -28,6 +28,7 @@ export default async function Popular() {
             currentTemp={city.currentTemp}
             key={city.city}
             currentIcon={city.currentIcon}
+            forecast={city.forecast}
           />
         ))}
       </div>
