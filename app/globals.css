@@ -22,8 +22,16 @@
 
 }
 
+
 body {
   background: var(--background);
   color: var(--white);
   font-family: var(--font-vt323);
+}
+
+@media (width <= 405px) {
+  body {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }

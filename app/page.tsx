@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="flex gap-2 w-full items">
+      <main className="flex justify-evenly gap-2 w-full items flex-wrap">
         <Popular />
 
         <Search />

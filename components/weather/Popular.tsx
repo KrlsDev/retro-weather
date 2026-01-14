@@ -11,7 +11,7 @@ export default async function Popular() {
 
   return (
     <>
-      <div className="flex-col items-center  w-1/3 pt-1 p-4 border border-green">
+      <div className="flex-col w-[400] max-[405]:p-2 items-center pt-1 p-4 border border-green">
         <svg
           className="w-full p-1"
           width="162"
