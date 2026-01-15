@@ -8,9 +8,9 @@ export default function Home() {
     <>
       <Navbar />
       <main className="flex justify-evenly gap-2 w-full items flex-wrap">
-        <Popular />
-
         <Search />
+        
+        <Popular />
 
         <Safe />
       </main>
