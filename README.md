@@ -81,6 +81,6 @@ Carlos Moreno Delgado
 
 ---
 
-Si este proyecto te ha sido util, considera darle una estrella en GitHub
+⭐ Si este proyecto te ha sido útil, considera darle una estrella en GitHub
 
-Desarrollado con Next.js y React
+💻 Desarrollado con ❤️ usando Next.js y React
